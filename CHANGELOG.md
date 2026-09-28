@@ -1,0 +1,35 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+This project adheres to [Semantic Versioning](https://semver.org/) and
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [Unreleased]
+
+## [3.0.1] - 2026-09-28
+
+### Changed
+- OpenResearch Stack: 1.39.17-001 → 1.39.17-002
+  - Security fix: A vulnerability in ExternalData (CVE-2026-100382) that allowed unauthenticated remote code execution is fixed.
+  - PageForms (2.1.3 → 2.1.12):
+    - Forms no longer crash with a fatal error in several cases: `runquery` with `format=leaflet` or embedded forms without field tags, `Special:FormEdit` when a stored value was a number, and form submissions with `{num}` page-name formulas.
+    - Dropdown, combobox, tokens, checkbox and radio-button fields now show clean display titles instead of raw, namespace-prefixed page names. This includes saved values that are not among the suggested options.
+    - Radio buttons no longer silently blank out a saved value on save.
+    - Fields with `mapping template=` and `SF_Select` fields with `function=` show their resolved result instead of raw markup.
+    - The edit/preview page no longer breaks for forms with a numeric-rating mapping field.
+    - Mutually exclusive alternative rows in "show on select" forms no longer stay visible at the same time.
+    - Large value lists (category, namespace, concept, property) are no longer loaded in full on every page view.
+
+## [3.0.0] - 2026-09-25
+
+### Changed
+- **BREAKING:** Renamed the image and its internal contract from SFB1153/crc1153-specific naming to the generic LabLSK naming, so it can be shared across multiple lab projects
+  - `ghcr.io/tibhannover/smw-crc1153` → `ghcr.io/tibhannover/smw-lablsk`
+  - `LocalSettings.SMW1153/` → `LocalSettings.LabLSK/`
+  - `mediawiki.smw1153.{media,styles}` → `mediawiki.lablsk.{media,styles}`
+  - `$wgSmwCrc1153Version` → `$wgSmwLabLskVersion`
+  - Consumers (smw-box, smw-config) need matching updates before deploying this image. The previous SMW1153-based contract remains available on the `2.x` branch.
+
+[Unreleased]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.0.1...HEAD
+[3.0.1]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.0.0...3.0.1
+[3.0.0]: https://github.com/TIBHannover/docker-smw-lablsk/compare/2.1.0...3.0.0
