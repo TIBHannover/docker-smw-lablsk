@@ -54,6 +54,20 @@ down:
 destroy:
 	$(compose) down --volumes --remove-orphans
 
+# ======== ELN adapter (local test setup, see README) ========
+
+# Sandbox accounts of the local test wiki only (same values as in docker-compose.yml). MediaWiki requires bot passwords
+# of at least 32 characters from [0-9a-w].
+ELN_BOT_PASSWORD ?= 0123456789abcdef0123456789abcdef
+ELN_TESTER_PASSWORD ?= sandbox-eln-tester-pw-0123
+
+.PHONY: eln-sandbox
+eln-sandbox: wait-for-wiki
+	$(wiki-exec) php maintenance/createAndPromote.php ElnBot $(ELN_BOT_PASSWORD) --bot || true
+	$(wiki-exec) php maintenance/createAndPromote.php ElnTester $(ELN_TESTER_PASSWORD) || true
+	$(wiki-exec) php maintenance/createBotPassword.php --appid adapter \
+		--grants basic,highvolume,editpage,createeditmovepage ElnBot $(ELN_BOT_PASSWORD) || true
+
 # ======== Backstop ========
 
 backstop = $(compose-run) backstop --config backstop.config.js

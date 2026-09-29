@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ### Added
 - ELNSMWAdapterUI 2.0.0 is installed in the image. It is not loaded by default; wikis enable it in their own settings with `wfLoadExtension( 'ELNSMWAdapterUI' )`.
+- ELN adapter service in the local compose stack, with ELNSMWAdapterUI enabled locally, and `make eln-sandbox` to create the sandbox accounts.
 
 ## [3.0.1] - 2026-09-28
 
