@@ -6,9 +6,16 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+## [3.1.0] - 2026-09-29
+
 ### Added
-- ELNSMWAdapterUI 2.0.0 is installed in the image. It is not loaded by default; wikis enable it in their own settings with `wfLoadExtension( 'ELNSMWAdapterUI' )`.
+- ELNSMWAdapterUI: 2.0.0
+  - New special page `Special:ELNSMWAdapterUI` to import spreadsheet files (and eLabFTW experiments) into the wiki through the ELN adapter service.
+  - The extension is installed but not active by default; a wiki enables it in its own settings with `wfLoadExtension( 'ELNSMWAdapterUI' )`.
 - ELN adapter service in the local compose stack, with ELNSMWAdapterUI enabled locally, and `make eln-sandbox` to create the sandbox accounts.
+
+### Fixed
+- The version reported by the image (`smw-lablsk-version.txt`, `$wgSmwLabLskVersion`) was still 3.0.0 in release 3.0.1.
 
 ## [3.0.1] - 2026-09-28
 
