@@ -26,7 +26,12 @@ RUN \
     #
     ### KnowledgeGraph (2026-01-20)
     ## 3.0.2 is the last version that supports MW 1.39
-    get-github-extension.sh KnowledgeGraph 3.0.2 SemanticMediaWiki/KnowledgeGraph
+    get-github-extension.sh KnowledgeGraph 3.0.2 SemanticMediaWiki/KnowledgeGraph && \
+    #
+    #
+    ### ELNSMWAdapterUI (2026-09-29)
+    ## Installed but not loaded by default; wikis enable it in their own settings
+    get-github-extension.sh ELNSMWAdapterUI 2.0.0 TIBHannover/eln-smw-adapter-ui
 
 RUN composer-update.sh
 USER root

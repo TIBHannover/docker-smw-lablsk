@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+### Added
+- ELNSMWAdapterUI 2.0.0 is installed in the image. It is not loaded by default; wikis enable it in their own settings with `wfLoadExtension( 'ELNSMWAdapterUI' )`.
+
 ## [3.0.1] - 2026-09-28
 
 ### Changed
