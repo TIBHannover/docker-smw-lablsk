@@ -6,9 +6,14 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+## [3.2.0] - 2026-09-30
+
 ### Added
-- OpenIDConnect: REL1_39-5ae6ab2 and PluggableAuth: 7.1.0
-  - Both extensions are installed but not active by default; a wiki enables them in its own settings with `wfLoadExtension( 'PluggableAuth' )` and `wfLoadExtension( 'OpenIDConnect' )`.
+- OpenIDConnect: REL1_39-5ae6ab2
+  - Wikis can offer login through an OpenID Connect provider (e.g. ORCID or a university single sign-on).
+  - The extension is installed but not active by default; a wiki enables it in its own settings with `wfLoadExtension( 'OpenIDConnect' )`.
+- PluggableAuth: 7.1.0
+  - Required by OpenIDConnect; installed but not active by default and enabled by a wiki with `wfLoadExtension( 'PluggableAuth' )`.
 
 ## [3.1.0] - 2026-09-29
 
