@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+### Added
+- OpenIDConnect: REL1_39-5ae6ab2 and PluggableAuth: 7.1.0
+  - Both extensions are installed but not active by default; a wiki enables them in its own settings with `wfLoadExtension( 'PluggableAuth' )` and `wfLoadExtension( 'OpenIDConnect' )`.
+
 ## [3.1.0] - 2026-09-29
 
 ### Added

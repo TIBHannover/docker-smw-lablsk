@@ -31,7 +31,18 @@ RUN \
     #
     ### ELNSMWAdapterUI (2026-09-29)
     ## Installed but not loaded by default; wikis enable it in their own settings
-    get-github-extension.sh ELNSMWAdapterUI 2.0.0 TIBHannover/eln-smw-adapter-ui
+    get-github-extension.sh ELNSMWAdapterUI 2.0.0 TIBHannover/eln-smw-adapter-ui && \
+    #
+    #
+    ### PluggableAuth (2024-02-23)
+    ## Required by OpenIDConnect. Installed but not loaded by default; wikis enable it in their own settings
+    get-github-extension.sh PluggableAuth 7.1.0 && \
+    #
+    #
+    ### OpenIDConnect (REL1_39-5ae6ab2)
+    ## Installed but not loaded by default; wikis enable it in their own settings
+    get-extension.sh OpenIDConnect https://github.com/gesinn-it/extdist.wmflabs.org/raw/main/dist/extensions/OpenIDConnect-REL1_39-5ae6ab2.tar.gz && \
+    COMPOSER=composer.local.json composer config --json --merge extra.merge-plugin.include '["extensions/OpenIDConnect/composer.json"]'
 
 RUN composer-update.sh
 USER root
