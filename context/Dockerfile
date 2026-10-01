@@ -29,9 +29,9 @@ RUN \
     get-github-extension.sh KnowledgeGraph 3.0.2 SemanticMediaWiki/KnowledgeGraph && \
     #
     #
-    ### ELNSMWAdapterUI (2026-09-29)
+    ### ELNSMWAdapterUI (2026-09-30)
     ## Installed but not loaded by default; wikis enable it in their own settings
-    get-github-extension.sh ELNSMWAdapterUI 2.0.0 TIBHannover/eln-smw-adapter-ui && \
+    get-github-extension.sh ELNSMWAdapterUI 2.0.1 TIBHannover/eln-smw-adapter-ui && \
     #
     #
     ### PluggableAuth (2024-02-23)
