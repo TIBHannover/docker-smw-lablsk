@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+## [3.2.1] - 2026-10-01
+
 ### Fixed
 - The local ELN test setup no longer prevents a freshly installed wiki from starting: the login throttle is now switched off with a value that MediaWiki 1.39 accepts.
 
