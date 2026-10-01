@@ -92,10 +92,23 @@ create-backup: wait-for-wiki
 restore-backup: wait-for-wiki
 	$(backup) restore
 
+# ======== Lint ========
+
+.PHONY: lint
+lint: lint-dockerfile lint-compose
+
+.PHONY: lint-dockerfile
+lint-dockerfile:
+	docker run --rm -i -v $(PWD)/.hadolint.yaml:/.config/hadolint.yaml:ro hadolint/hadolint < context/Dockerfile
+
+.PHONY: lint-compose
+lint-compose:
+	docker compose -f docker-compose.yml config --quiet
+
 # ======== CI ========
 
 .PHONY: ci
-ci: down build
+ci: lint down build
 	$(MAKE) with-ci destroy mysql-up disable-opcache restore-backup backstop-test
 	$(MAKE) with-ci destroy
 	$(eval COMPOSE_ARGS = )
