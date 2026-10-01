@@ -50,8 +50,8 @@ USER root
 ######################################
 # add LabLSK settings                #
 ######################################
-ADD --chown=www-data:www-data LocalSettings.Include.php /var/www/html/.
-ADD --chown=www-data:www-data LocalSettings.LabLSK /var/www/html/LocalSettings.LabLSK
+COPY --chown=www-data:www-data LocalSettings.Include.php /var/www/html/.
+COPY --chown=www-data:www-data LocalSettings.LabLSK /var/www/html/LocalSettings.LabLSK
 
 # Global styles
 #COPY mediawiki-global-styles/styles/* /var/www/html/resources/src/mediawiki.gesinn-it.global.styles/

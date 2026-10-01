@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 ## [Unreleased]
 
 ### Changed
+- The LabLSK settings files are copied into the image with `COPY` instead of `ADD`; the resulting image is unchanged.
 - ELNSMWAdapterUI: 2.0.0 → 2.0.1
   - The import forms on `Special:ELNSMWAdapterUI` now look and behave like standard MediaWiki forms, with a standard message box for the service status and a progress bar for the import.
   - A failed form submission now names the actual cause (e.g. a host that is not allowed) instead of a generic failure message.
