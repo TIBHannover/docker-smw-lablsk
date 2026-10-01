@@ -2,7 +2,7 @@
 # docker-smw-lablsk                  #
 ######################################
 
-ARG OPENRESEARCH_STACK=1.39.17-002
+ARG OPENRESEARCH_STACK=1.39.17-003
 FROM ghcr.io/tibhannover/openresearch-stack:${OPENRESEARCH_STACK}
 
 RUN \
