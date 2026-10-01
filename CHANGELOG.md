@@ -6,9 +6,11 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+## [3.3.0] - 2026-10-01
+
 ### Changed
 - OpenResearch Stack: 1.39.17-002 → 1.39.17-003
-  - The web server and PHP are hardened further: the Apache configuration now denies access by default, with additional PHP settings.
+  - Additional hardening
 
 ## [3.2.1] - 2026-10-01
 
