@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+### Fixed
+- The local ELN test setup no longer prevents a freshly installed wiki from starting: the login throttle is now switched off with a value that MediaWiki 1.39 accepts.
+
 ### Changed
 - The LabLSK settings files are copied into the image with `COPY` instead of `ADD`; the resulting image is unchanged.
 - ELNSMWAdapterUI: 2.0.0 → 2.0.1
