@@ -1,7 +1,0 @@
-ignored:
-  # The base image runs as root for the final stage setup; the entrypoint drops privileges
-  - DL3002
-  # graphviz comes from the distribution release of the base image
-  - DL3008
-  # graphviz recommends fonts needed to render graphs; dropping recommends would change the output
-  - DL3015

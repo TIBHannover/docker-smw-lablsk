@@ -99,7 +99,7 @@ lint: lint-dockerfile lint-compose
 
 .PHONY: lint-dockerfile
 lint-dockerfile:
-	docker run --rm -i -v $(PWD)/.hadolint.yaml:/.config/hadolint.yaml:ro hadolint/hadolint < context/Dockerfile
+	docker run --rm -i hadolint/hadolint < context/Dockerfile
 
 .PHONY: lint-compose
 lint-compose:

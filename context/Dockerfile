@@ -5,6 +5,7 @@
 ARG OPENRESEARCH_STACK=1.39.17-003
 FROM ghcr.io/tibhannover/openresearch-stack:${OPENRESEARCH_STACK}
 
+# hadolint ignore=DL3008,DL3015
 RUN \
 	### install required apt packages
 	#
@@ -16,6 +17,7 @@ RUN \
 	apt-get install -y graphviz && \
 	rm -rf /var/lib/apt/lists/*
 
+# hadolint ignore=DL3066
 USER www-data
 RUN \
     ### ConfirmAccount
@@ -45,6 +47,7 @@ RUN \
     COMPOSER=composer.local.json composer config --json --merge extra.merge-plugin.include '["extensions/OpenIDConnect/composer.json"]'
 
 RUN composer-update.sh
+# hadolint ignore=DL3002,DL3066
 USER root
 
 ######################################
