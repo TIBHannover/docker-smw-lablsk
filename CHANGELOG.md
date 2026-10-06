@@ -6,8 +6,12 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+## [3.3.1] - 2026-10-06
+
 ### Changed
 - OpenResearch Stack: 1.39.17-003 → 1.39.17-004
+  - EditAccount: 3.1.0 → 3.1.1
+    - Fixed an error on Special:Contributions that made the page unusable; the notice for disabled accounts is displayed again.
 
 ## [3.3.0] - 2026-10-01
 
@@ -71,6 +75,11 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
   - `$wgSmwCrc1153Version` → `$wgSmwLabLskVersion`
   - Consumers (smw-box, smw-config) need matching updates before deploying this image. The previous SMW1153-based contract remains available on the `2.x` branch.
 
-[Unreleased]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.0.1...HEAD
+[Unreleased]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.1...HEAD
+[3.3.1]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.0...3.3.1
+[3.3.0]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.2.1...3.3.0
+[3.2.1]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.2.0...3.2.1
+[3.2.0]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.1.0...3.2.0
+[3.1.0]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.0.1...3.1.0
 [3.0.1]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/TIBHannover/docker-smw-lablsk/compare/2.1.0...3.0.0
