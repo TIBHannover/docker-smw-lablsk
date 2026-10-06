@@ -2,7 +2,7 @@
 # docker-smw-lablsk                  #
 ######################################
 
-ARG OPENRESEARCH_STACK=1.39.17-003
+ARG OPENRESEARCH_STACK=1.39.17-004
 FROM ghcr.io/tibhannover/openresearch-stack:${OPENRESEARCH_STACK}
 
 # hadolint ignore=DL3008,DL3015

@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+### Changed
+- OpenResearch Stack: 1.39.17-003 → 1.39.17-004
+
 ## [3.3.0] - 2026-10-01
 
 ### Changed
