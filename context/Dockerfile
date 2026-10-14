@@ -77,6 +77,6 @@ ENV WIKI_PORT=8080
 ######################################
 # set smw-lablsk version      		 #
 ######################################
-ARG SMW_LABLSK_VERSION=3.3.1
+ARG SMW_LABLSK_VERSION=3.3.2
 RUN echo $SMW_LABLSK_VERSION > smw-lablsk-version.txt && \
     echo "\$wgSmwLabLskVersion = '$SMW_LABLSK_VERSION';" >> LocalSettings.Include.php

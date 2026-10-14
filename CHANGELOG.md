@@ -6,8 +6,16 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+## [3.3.2] - 2026-10-14
+
 ### Changed
 - OpenResearch Stack: 1.39.17-004 → 1.39.17-005
+  - PageForms: 2.1.12 → 2.3.2
+    - Fixed `#autoedit` and the `pfautoedit` API removing or corrupting entries of multiple-instance templates, dropping undefined template parameters and reporting false edit conflicts.
+    - Fixed forms removing a page's Semantic MediaWiki properties when opened or saved right after a purge.
+    - Fixed several form problems: templates created from forms storing a leading `0:` in field values, the "Minor edit" checkbox being ignored, random numbers in page names, section text being stored twice, and permission errors on forms denied by a hook.
+    - Forms with several fields using the same value source or mapping template now open faster.
+    - Added additional hardening.
 
 ## [3.3.1] - 2026-10-06
 
@@ -78,7 +86,8 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
   - `$wgSmwCrc1153Version` → `$wgSmwLabLskVersion`
   - Consumers (smw-box, smw-config) need matching updates before deploying this image. The previous SMW1153-based contract remains available on the `2.x` branch.
 
-[Unreleased]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.1...HEAD
+[Unreleased]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.2...HEAD
+[3.3.2]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.1...3.3.2
 [3.3.1]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.0...3.3.1
 [3.3.0]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.2.1...3.3.0
 [3.2.1]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.2.0...3.2.1
