@@ -6,6 +6,25 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+### Changed
+- OpenResearch Stack: 1.39.17-005 → 1.39.17-006
+  - PHP: 8.1 → 8.2
+    - The wiki now runs on PHP 8.2, using a newer base image that also contains security fixes.
+    - Custom code, local extensions or settings that rely on PHP 8.1 behaviour should be checked, for example for dynamic properties, which PHP 8.2 reports as deprecated.
+    - The build of the image uses the newer package manager of the PHP 8.2 base image; its stricter default package checks are switched off for the composer step, because the pinned package versions are required for MediaWiki 1.39 compatibility.
+  - PageForms: 2.3.2 → 2.4.0
+    - Date inputs now store dates as ISO dates (`2026`, `2026-09`, `2026-09-30`, and `2026-09-30 14:05:00` with a time), regardless of input type, wiki language and `$wgAmericanDates`. Formats written before are still understood and are rewritten as ISO dates when the form is saved. Templates that take a stored date apart themselves, for example by splitting it at `/`, need to be adjusted.
+    - The month dropdown of the `date` and `datetime` inputs shows month names in the user's language, and the day, month and year entries follow the date format chosen in the user's preferences.
+    - The calendar and spreadsheet displays read and write ISO dates and no longer depend on `$wgAmericanDates`.
+    - Saving a form no longer drops a date its input cannot show: a year or month on its own is kept in a text field, and a value that is not a date is kept with a note instead of being emptied.
+    - A `datetime` input no longer shows 12:00:00 AM for a stored value that has no time.
+    - Values typed into the day, month and year entries are shown as typed when the form is shown again, even if they contain characters such as `<` and `"`.
+    - A day that the month does not have, like the 31st of February, is rejected by the `date` input.
+    - The calendar display (`display=calendar`) is shown again; before, the calendar stayed empty and saving the form removed all calls of the template from the page.
+    - Fixed a page of a category going missing from the values of a `values from category` field when its name equals the display title of another page of the category.
+    - Opening a form with a field whose values come from a number property (`values from property`) works again instead of failing with an error.
+    - A form tag such as `{{{standard input|save}}}` at the end of a parser function works again: the parser function is evaluated instead of being shown as text.
+
 ## [3.3.2] - 2026-10-14
 
 ### Changed

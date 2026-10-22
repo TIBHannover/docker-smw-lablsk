@@ -2,7 +2,7 @@
 # docker-smw-lablsk                  #
 ######################################
 
-ARG OPENRESEARCH_STACK=1.39.17-005
+ARG OPENRESEARCH_STACK=1.39.17-006
 FROM ghcr.io/tibhannover/openresearch-stack:${OPENRESEARCH_STACK}
 
 # hadolint ignore=DL3008,DL3015
@@ -46,7 +46,10 @@ RUN \
     get-extension.sh OpenIDConnect https://github.com/gesinn-it/extdist.wmflabs.org/raw/main/dist/extensions/OpenIDConnect-REL1_39-5ae6ab2.tar.gz && \
     COMPOSER=composer.local.json composer config --json --merge extra.merge-plugin.include '["extensions/OpenIDConnect/composer.json"]'
 
-RUN composer-update.sh
+# Composer >= 2.9 applies stricter default package checks that reject the pinned
+# versions. These versions are required for MediaWiki 1.39 compatibility, so the
+# check is disabled for the composer step only.
+RUN COMPOSER_NO_SECURITY_BLOCKING=1 composer-update.sh
 # hadolint ignore=DL3002,DL3066
 USER root
 
