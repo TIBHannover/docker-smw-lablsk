@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+## [3.5.0] - 2026-11-26
+
 ### Changed
 - ELNSMWAdapterUI: 2.0.1 → 2.1.0
   - `Special:ELNSMWAdapterUI` offers a dry run: a toggle on the method selection page runs the import without writing to the wiki and lists the protocols that would be created. It is only shown with ELN SMW adapter 1.1.0 or later.
@@ -112,7 +114,8 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
   - `$wgSmwCrc1153Version` → `$wgSmwLabLskVersion`
   - Consumers (smw-box, smw-config) need matching updates before deploying this image. The previous SMW1153-based contract remains available on the `2.x` branch.
 
-[Unreleased]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.4.0...HEAD
+[Unreleased]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.5.0...HEAD
+[3.5.0]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.4.0...3.5.0
 [3.4.0]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.2...3.4.0
 [3.3.2]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.1...3.3.2
 [3.3.1]: https://github.com/TIBHannover/docker-smw-lablsk/compare/3.3.0...3.3.1
