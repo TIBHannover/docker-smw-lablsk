@@ -6,6 +6,11 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ## [Unreleased]
 
+### Changed
+- ELNSMWAdapterUI: 2.0.1 → 2.1.0
+  - `Special:ELNSMWAdapterUI` offers a dry run: a toggle on the method selection page runs the import without writing to the wiki and lists the protocols that would be created. It is only shown with ELN SMW adapter 1.1.0 or later.
+  - The service status shows the version of the deployed adapter plugins, if the adapter reports it.
+
 ## [3.4.0] - 2026-10-22
 
 ### Changed
